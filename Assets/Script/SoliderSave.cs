@@ -10,9 +10,10 @@ public class SoliderSave : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // 检查是否与标记为“Player”的对象发生碰撞，并且Player的碰撞计数少于3次
-        if (collision.gameObject.CompareTag("Player") && saveColunter.collisionCount < 3)
+        if (collision.gameObject.CompareTag("Player") && saveColunter.RescuingCount < 3)
         {
             Destroy(gameObject); // 销毁当前物体
+            SoliderManager.ItemRemoved();
         }
         else if (collision.gameObject.CompareTag("Player"))
         {

@@ -6,32 +6,41 @@ using TMPro;
 public class saveColunter : MonoBehaviour
 {
     public TextMeshProUGUI counterText;
-    public static int collisionCount = 0;
-    public string targetTag = "Collectible";
+    public static int RescuingCount = 0;
+    public static int savedCount = 0;
+    public string targetTag1 = "Solider";
+    public string targetTag2 = "Camp";
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.CompareTag(targetTag))
+        if (other.CompareTag(targetTag1))
         {
-            if (collisionCount >= 3)
+            if (RescuingCount >= 3)
             {
-                Debug.Log("Cannot destroy anymore! Total destroyed: " + collisionCount);
+                Debug.Log("Cannot destroy anymore! Total destroyed: " + RescuingCount);
             }
 
-            else if (collisionCount < 3)
+            else if (RescuingCount < 3)
             {
-                collisionCount++;
+                RescuingCount++;
                 Destroy(other.gameObject);
-                Debug.Log("Destroyed: " + other.gameObject.name + ". Total destroyed: " + collisionCount);
+                Debug.Log("Destroyed: " + other.gameObject.name + ". Total destroyed: " + RescuingCount);
             }
         }
-    }
+
+        if (other.CompareTag(targetTag2))
+        {
+            savedCount = savedCount + RescuingCount;
+            RescuingCount = 0;
+        }
+      }
+
 
     public void Update()
     {
-        counterText.text = "Rescuing " + collisionCount + "/3";
+        counterText.text = "Rescuing " + RescuingCount + "/3    Saved "+ savedCount;
     }
 
 }
