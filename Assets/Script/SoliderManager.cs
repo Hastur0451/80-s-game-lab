@@ -5,28 +5,34 @@ using TMPro;
 
 public class SoliderManager : MonoBehaviour
 {
-    public static int itemCount = 7; // 跟踪场景中特定Prefab的数量
+    public static int itemCount = 7; 
     public Transform WinTarget;
     public Camera mainCamera;
     public TextMeshProUGUI counterText;
+    public static AudioSource audioSource;
+    public static AudioClip destroySound;
+    public static float volume = 1.0f;
+    public AudioClip destroySoundInspector;
 
-    private void Start()
+    private void Awake()
     {
+        if (audioSource == null)
+        {
+            destroySound = destroySoundInspector;
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
         if (mainCamera == null)
         {
             mainCamera = Camera.main;
         }
     }
-    // 当新的Prefab实例被创建时调用
-    public void ItemAdded()
-    {
-        itemCount++;
-    }
 
-    // 当Prefab实例被销毁时调用
+
     public static void ItemRemoved()
     {
         itemCount--;
+        audioSource.PlayOneShot(destroySound, volume);
     }
 
     private void WinScreen()
@@ -40,7 +46,7 @@ public class SoliderManager : MonoBehaviour
 
     public void Update()
     {
-        counterText.text = "itemCount "+ itemCount;
+        counterText.text = itemCount+ "  Solider left ";
         WinScreen();
     }
 }
