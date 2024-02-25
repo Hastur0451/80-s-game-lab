@@ -13,6 +13,8 @@ public class SoliderManager : MonoBehaviour
     public static AudioClip destroySound;
     public static float volume = 1.0f;
     public AudioClip destroySoundInspector;
+    public WinOrLost winOrLost;
+    private bool end = false;
 
     private void Awake()
     {
@@ -37,16 +39,16 @@ public class SoliderManager : MonoBehaviour
 
     private void WinScreen()
     {
-        if (itemCount == 0 && saveColunter.RescuingCount == 0)
+        if (itemCount == 0 && saveColunter.RescuingCount == 0 && !end)
         {
-            mainCamera.transform.position = WinTarget.position;
-            mainCamera.transform.rotation = WinTarget.rotation;
+            end = true;
+            winOrLost.WinGame();
         }
     }
 
     public void Update()
     {
-        counterText.text = itemCount+ "  Solider left ";
+        counterText.text = itemCount + "  Solider left ";
         WinScreen();
     }
 }

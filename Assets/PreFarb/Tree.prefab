@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8100156378568960759}
   - component: {fileID: 8100156378568960752}
-  - component: {fileID: 8100156378568960753}
-  - component: {fileID: 8100156378568960756}
   - component: {fileID: 8100156378568960758}
+  - component: {fileID: 8100156378568960753}
   - component: {fileID: 8100156378568960757}
   m_Layer: 0
   m_Name: Tree
@@ -88,6 +87,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8100156378568960758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100156378568960754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd55d1a2b809634387c7ac7fc42d6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winOrLost: {fileID: 0}
 --- !u!60 &8100156378568960753
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -194,32 +206,6 @@ PolygonCollider2D:
       - {x: 0.59, y: -0.26}
       - {x: 0.03, y: -0.29999998}
   m_UseDelaunayMesh: 0
---- !u!114 &8100156378568960756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8100156378568960754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 454456e5854b1f84f9b938f1dbb6c76f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8100156378568960758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8100156378568960754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bd55d1a2b809634387c7ac7fc42d6ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameoOverTarget: {fileID: 0}
-  mainCamera: {fileID: 0}
 --- !u!50 &8100156378568960757
 Rigidbody2D:
   serializedVersion: 4

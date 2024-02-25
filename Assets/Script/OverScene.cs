@@ -4,24 +4,13 @@ using UnityEngine;
 
 public class OverScene : MonoBehaviour
 {
-    public Transform GameoOverTarget; 
-    public Camera mainCamera; 
-
-    private void Start()
-    {
-        if (mainCamera == null)
-        {
-            mainCamera = Camera.main;
-        }
-    }
+    public WinOrLost winOrLost;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            mainCamera.transform.position = GameoOverTarget.position;
-            mainCamera.transform.rotation = GameoOverTarget.rotation;
-            Time.timeScale = 0f;
+            winOrLost.LostGame();
         }
     }
 }
