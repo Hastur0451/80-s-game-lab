@@ -31,6 +31,14 @@ public class levelManage : MonoBehaviour
                 counterText.text = "Pause";
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #endif
+            Application.Quit();
+        }
     }
 
     void ResetGame()
