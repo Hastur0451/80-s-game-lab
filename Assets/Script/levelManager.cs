@@ -15,6 +15,7 @@ public class levelManage : MonoBehaviour
         {
             ResetGame();
             SceneManager.LoadScene(0);
+            Time.timeScale = 1f;
         }
 
         if (Input.GetKeyDown(KeyCode.Space))

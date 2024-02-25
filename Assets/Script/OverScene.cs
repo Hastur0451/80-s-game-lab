@@ -21,6 +21,7 @@ public class OverScene : MonoBehaviour
         {
             mainCamera.transform.position = GameoOverTarget.position;
             mainCamera.transform.rotation = GameoOverTarget.rotation;
+            Time.timeScale = 0f;
         }
     }
 }

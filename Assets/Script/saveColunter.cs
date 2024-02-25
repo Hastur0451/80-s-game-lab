@@ -8,6 +8,7 @@ public class saveColunter : MonoBehaviour
     public TextMeshProUGUI counterText;
     public static int RescuingCount = 0;
     public static int savedCount = 0;
+    public int timeAdd = 0;
     public string targetTag1 = "Solider";
     public string targetTag2 = "Camp";
 
